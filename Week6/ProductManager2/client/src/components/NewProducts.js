@@ -6,7 +6,7 @@ const [title, setTitle] = useState("");
 const [price, setPrice] = useState("");
 const [description, setDescription] = useState("");
 
-const submitHandler = (e)=>{
+const handleSubmit = (e)=>{
     e.preventDefault();
 
     axios.post("http://localhost:8000/api/products",{
@@ -32,7 +32,7 @@ return (
             Product Manager
         </header>
 
-        <form onSubmit={submitHandler}>
+        <form onSubmit={handleSubmit}>
             <div className="form-fields">
                 <label>Title</label>
                 <input
@@ -68,7 +68,7 @@ return (
             </div>
 
             <br />
-            <input className="submit-input" type="submit" value="Create" />
+            <button type="submit">Create</button>
         </form>
     </div>
 );
