@@ -4,7 +4,7 @@ import axios from 'axios';
 
 const Product = (props) => {
     const {id} = useParams();
-    const [product, setProduct] = useState();
+    const [product, setProduct] = useState({});
     useEffect(() => {
         axios
             .get(`http://localhost:8000/api/products/${id}`)
@@ -13,7 +13,7 @@ const Product = (props) => {
                 setProduct(res.data);
             })
             .catch((err) => {
-                console.log(err);
+                console.log('ERROR by ID', err);
             });
     }, [id]);
     return (

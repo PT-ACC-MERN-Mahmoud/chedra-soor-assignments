@@ -15,14 +15,14 @@ const handleSubmit = (e)=>{
     description
     })
     .then((res)=>{
-    console.log(res);
+    
     console.log(res.data);
     setTitle("");
     setPrice("");
     setDescription("");
     })
     .catch((err)=>{
-    console.log(err);
+    console.log('POST ERROR', err);
     })
 }
 

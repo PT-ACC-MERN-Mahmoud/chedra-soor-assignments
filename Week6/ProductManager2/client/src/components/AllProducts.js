@@ -5,12 +5,12 @@ import { Link } from 'react-router-dom';
 const AllProducts = (props) => {
     const {productList, setProductList} = props;
     useEffect(() => {
-        axios.get("http://localhost:8000/api/products")
+        axios.get('http://localhost:8000/api/products')
         .then((res) => {
             console.log(res.data);
             setProductList(res.data);
         })
-        .catch((err) => console.log(err));
+        .catch((err) => console.log('Error',err));
     },[]);
     return (
     <div>
@@ -18,7 +18,7 @@ const AllProducts = (props) => {
         {
             productList.map((product, index) => (
                 <div key ={index}>
-                    <Link to={`/api/product/${product._id}`}>
+                    <Link to={`/products/${product._id}`}>
                         {product.title}
                     </Link>
                 </div>
