@@ -1,12 +1,20 @@
 import './App.css';
-import NewProduct from './components/NewProducts';
+import {BrowserRouter, Routes, Route} from 'react-router-dom';
+import Main from './components/Main';
+import Product from './components/Product';
 
 function App() {
   return (
+    <BrowserRouter>
     <div className="App">
-      <NewProduct path='/' />
+      <Routes>
+        <Route path='/' element={<Main />} />
+        <Route path='/product/:id' element={<Product />} />
+      </Routes>
+      
     </div>
+    </BrowserRouter>
   );
-}
+};
 
 export default App;

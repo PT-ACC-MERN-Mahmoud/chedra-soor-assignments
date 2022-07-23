@@ -1,10 +1,11 @@
 const mongoose = require("mongoose");
 
 const ProductSchema = new mongoose.Schema(
-    {
+    { //id is auto created
         title: {
             type: String,
-            required: [true, 'Title is required']
+            required: [true, 'Title is required'],
+            minlength: [3, 'Title must be 3 characters long']
         },
         price: {
             type: Number,
@@ -12,7 +13,8 @@ const ProductSchema = new mongoose.Schema(
         },
         description: {
             type: String,
-            required: [true, 'Description is required']
+            required: [true, 'Description is required'],
+            minlength: [3, 'Description must be 3 characters long']
         }
     },
     {timestamps: true}

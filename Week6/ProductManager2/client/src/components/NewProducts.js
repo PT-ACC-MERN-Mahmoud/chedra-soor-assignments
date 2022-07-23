@@ -8,7 +8,7 @@ const [description, setDescription] = useState("");
 
 const handleSubmit = (e)=>{
     e.preventDefault();
-
+    console.log('You clicked submit.');
     axios.post("http://localhost:8000/api/products",{
     title, 
     price, 
@@ -34,7 +34,7 @@ return (
 
         <form onSubmit={handleSubmit}>
             <div className="form-fields">
-                <label>Title</label>
+                <label>Title: </label>
                 <input
                     onChange={(e) => setTitle(e.target.value)}
                     value={title}
@@ -46,7 +46,7 @@ return (
             <br />
 
             <div className="form-fields">
-                <label>Price</label>
+                <label>Price: $</label>
                 <input
                     onChange={(e) => setPrice(e.target.value)}
                     value={price}
@@ -58,7 +58,7 @@ return (
             <br />
 
             <div className="form-fields">
-                <label>Description</label>
+                <label>Description: </label>
                 <input
                     onChange={(e) => setDescription(e.target.value)}
                     value={description}
