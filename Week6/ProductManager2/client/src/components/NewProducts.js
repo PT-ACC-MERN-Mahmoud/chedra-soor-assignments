@@ -8,7 +8,7 @@ const [description, setDescription] = useState("");
 
 const handleSubmit = (e)=>{
     e.preventDefault();
-    console.log('You clicked submit.');
+    
     axios.post("http://localhost:8000/api/products",{
     title, 
     price, 
